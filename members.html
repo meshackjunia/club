@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Members</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Include the common header -->
+    <?php include 'header.html'; ?>
+
+    <div class="container">
+        <h1>Meet Our Members</h1>
+        <p>Get to know the diverse group of individuals that make up our club.</p>
+        <!-- Member profiles can be dynamically loaded here -->
+        <h2>Member Registration</h2>
+        <form action="process_registration.php" method="post" class="registration-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="membership">Membership Type:</label>
+            <select id="membership" name="membership" required>
+                <option value="standard">Standard</option>
+                <option value="premium">Premium</option>
+            </select>
+
+            <button type="pay.htmlS">Register and Pay</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Club Membership System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body alignment="center">
+    <!-- Include the common header -->
+    <?php include 'header.html'; ?>
+
+    <div class="container" background-color="blue">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Reach out to us with any questions or feedback.</p>
+        <form action="contact_form.php" method="post">
+            <label for="name">Name:</label>  <br>
+            <input type="text" id="name" name="name" required>
+            <br> <br>
+            <label for="email">Email:</label> <br>
+            <input type="email" id="email" name="email" required>
+            <br> <br>
+            <label for="message">Message:</label> <br>
+            <textarea id="message" name="message" required></textarea>
+            <br> <br>
+            <input type="submit" value="Send Message"> <br>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Club Membership System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+ 
