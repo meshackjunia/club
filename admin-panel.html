@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages Admin Panel</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1><i class="fas fa-envelope"></i> Contact Messages</h1>
+            <div class="admin-info">
+                <span id="unread-count" class="badge">0 unread</span>
+                <span id="total-count" class="badge secondary">0 total</span>
+            </div>
+        </header>
+
+        <div class="admin-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search messages...">
+            </div>
+            <div class="filter-controls">
+                <select id="statusFilter">
+                    <option value="all">All Messages</option>
+                    <option value="unread">Unread Only</option>
+                    <option value="read">Read Only</option>
+                    <option value="replied">Replied</option>
+                </select>
+                <select id="sortFilter">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+                <button id="exportBtn" class="btn">
+                    <i class="fas fa-download"></i> Export
+                </button>
+            </div>
+        </div>
+
+        <div class="messages-container">
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading messages...</p>
+            </div>
+            <div id="messagesList" class="messages-list">
+                <!-- Messages will be loaded here -->
+            </div>
+            <div id="noMessages" class="no-messages" style="display: none;">
+                <i class="fas fa-inbox"></i>
+                <h3>No messages found</h3>
+                <p>All caught up! No messages match your criteria.</p>
+            </div>
+        </div>
+
+        <div class="message-modal" id="messageModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalSubject">Subject</h2>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="message-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-user"></i>
+                            <span id="modalName">Name</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-envelope"></i>
+                            <span id="modalEmail">Email</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-phone"></i>
+                            <span id="modalPhone">Phone</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="modalTime">Time</span>
+                        </div>
+                    </div>
+                    <div class="message-content">
+                        <p id="modalMessage">Message content</p>
+                    </div>
+                    <div class="message-actions">
+                        <button id="replyBtn" class="btn btn-primary">
+                            <i class="fas fa-reply"></i> Reply
+                        </button>
+                        <button id="markAsReadBtn" class="btn btn-secondary">
+                            <i class="fas fa-check"></i> Mark as Read
+                        </button>
+                        <button id="deleteBtn" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="admin-script.js"></script>
+</body>
+</html>
